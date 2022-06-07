@@ -8,7 +8,7 @@ int main(int argc, char **argv) {
     std::cout << "Hello, World!" << std::endl;
 
     vpImage<vpRGBa> I;
-    vpImageIo::read(I, argv[1]);
+    vpImageIo::read(I, "/root/visp-ws/visp/tutorial/image/monkey.png");
     vpDisplayX d(I, vpDisplay::SCALE_AUTO);
     vpDisplay::setTitle(I, "My Image");
     vpDisplay::display(I);
