@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  visp:
+    image: visp:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - type: bind
+        source: ..
+        target: /root/visp-ws/tracking
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+    environment:
+      - DISPLAY=$DISPLAY
+    command: tail -F anything
