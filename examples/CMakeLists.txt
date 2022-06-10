@@ -3,10 +3,6 @@ project(examples)
 
 set(CMAKE_CXX_STANDARD 17)
 
-#find_package(VISP REQUIRED)
+add_subdirectory(test)
+add_subdirectory(camera)
 
-include_directories(${VISP_INCLUDE_DIRS})
-
-add_executable(test main.cpp)
-
-target_link_libraries(test ${VISP_LIBRARIES})

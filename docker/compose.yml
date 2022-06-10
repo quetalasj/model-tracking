@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+      network: host
     volumes:
       - type: bind
         source: ..
@@ -13,6 +14,10 @@ services:
       - type: bind
         source: /tmp/.X11-unix
         target: /tmp/.X11-unix
+      - type: bind
+        source: /dev
+        target: /dev
     environment:
       - DISPLAY=$DISPLAY
+    privileged: true
     command: tail -F anything
