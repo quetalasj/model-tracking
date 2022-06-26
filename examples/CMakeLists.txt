@@ -3,5 +3,8 @@ project(examples)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_subdirectory(test)
 
+find_package(modelTrackingLib CONFIG REQUIRED)
+
+add_subdirectory(test)
+add_subdirectory(camera)
